@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import React, { useState, useEffect } from "react";
+import Search from "./components/Search";
+import CharInfo from "./components/CharInfo";
+import Deaths from "./Deaths";
 
 function App() {
+  const [character, setCharacter] = useState("");
+  const [playerDeath, setPlayerDeath] = useState([]);
+  const [profile, setProfile] = useState({
+    name: "",
+    vocation: "",
+    level: "",
+  });
+  console.log(playerDeath);
+
+  const onSearchSubmit = (input) => {
+    setCharacter(input);
+  };
+
+  useEffect(() => {
+    fetch(`https://api.tibiadata.com/v2/characters/${character}.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlayerDeath([...data.characters.deaths]);
+        setProfile({
+          name: data.characters.data.name,
+          vocation: data.characters.data.vocation,
+          level: data.characters.data.level,
+        });
+      });
+  }, [character]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header className="header" />
+      <Search onSearchSubmit={onSearchSubmit} />
+      <CharInfo
+        name={profile.name}
+        vocation={profile.vocation}
+        level={profile.level}
+      />
+      {playerDeath.map((death) => (
+        <Deaths reason={death.reason} />
+      ))}
     </div>
   );
 }
