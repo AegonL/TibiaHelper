@@ -1,14 +1,20 @@
 import React from "react";
-import Deaths from "../Deaths";
+import styled from "styled-components";
 
-const CharInfo = ({ name, vocation, level }) => {
+const StyledList = styled.ul`
+  list-style: none;
+`;
+
+const CharInfo = ({ name, vocation, level, reason }) => {
   return (
     <div>
-      <ul>
+      <StyledList>
         <li>Name : {name} </li>
         <li>Vocation : {vocation}</li>
         <li>Level : {level}</li>
-      </ul>
+        <br />
+        <li>Reason of Death : {reason}</li>
+      </StyledList>
     </div>
   );
 };

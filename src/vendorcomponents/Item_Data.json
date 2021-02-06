@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "item_name": "Golden Armor",
+    "price": "12,000",
+    "vendor_name": "Blue Djinn"
+  },
+  {
+    "id": 2,
+    "item_name": "Dragon Hammer",
+    "price": "15,000",
+    "vendor_name": "Green Djinn"
+  },
+  {
+    "id": 3,
+    "item_name": "Magic Plate Armor",
+    "price": "5,000",
+    "vendor_name": "Blue Djinn"
+  },
+  {
+    "id": 4,
+    "item_name": "Royal Helmet",
+    "price": "19,000",
+    "vendor_name": "Green Djinn"
+  },
+  {
+    "id": 5,
+    "item_name": "Boots of Haste",
+    "price": "200,000",
+    "vendor_name": "Blue Djinn"
+  }
+]

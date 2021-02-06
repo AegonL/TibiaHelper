@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import React, { useState, useEffect } from "react";
 import Search from "./components/Search";
 import CharInfo from "./components/CharInfo";
-import Deaths from "./Deaths";
+import Vendor from "./vendorcomponents/Vendor";
 
 function App() {
   const [character, setCharacter] = useState("");
@@ -39,10 +39,11 @@ function App() {
         name={profile.name}
         vocation={profile.vocation}
         level={profile.level}
+        reason={playerDeath.map((death) => (
+          <li>{death.reason}</li>
+        ))}
       />
-      {playerDeath.map((death) => (
-        <Deaths reason={death.reason} />
-      ))}
+      <Vendor />
     </div>
   );
 }
