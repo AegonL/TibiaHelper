@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "Martel";
+  src: url("//db.onlinewebfonts.com/t/520e04751a3ae18f8aac2ded52aa0c56.eot");
+  src: url("//db.onlinewebfonts.com/t/520e04751a3ae18f8aac2ded52aa0c56.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/520e04751a3ae18f8aac2ded52aa0c56.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/520e04751a3ae18f8aac2ded52aa0c56.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/520e04751a3ae18f8aac2ded52aa0c56.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/520e04751a3ae18f8aac2ded52aa0c56.svg#Martel")
+      format("svg");
+}

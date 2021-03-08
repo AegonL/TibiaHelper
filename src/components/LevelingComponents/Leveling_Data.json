@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "level": 2,
+    "place": "Troll Cave"
+  },
+  {
+    "id": 2,
+    "level": 1000,
+    "place": "Demon Cave"
+  },
+  {
+    "id": 3,
+    "level": 2,
+    "place": "Troll Cave"
+  },
+  {
+    "id": 4,
+    "level": 100,
+    "place": "Cyclops Cave"
+  },
+  {
+    "id": 5,
+    "level": 20,
+    "place": "Dog Cave"
+  }
+]

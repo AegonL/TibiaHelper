@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 80%;
+  margin: 8rem auto;
+  box-shadow: red;
+  min-height: 80vh;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #c4c4c4;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(212, 104, 104, 0.082),
+      #ffffff93
+    ),
+    url(../src/img/lSXW90G.jpg);
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.438);
+}

@@ -5,37 +5,46 @@ import ITEMDATA from "./Item_Data.json";
 const StyledSearch = styled.form`
   font-size: 1.5em;
   text-align: center;
-  color: palevioletred;
 `;
 
 const StyledInput = styled.input`
   width: 300px;
   height: 40px;
   font-size: 20px;
+  text-align: center;
+`;
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: space-around;
 `;
 
 const Vendor = () => {
   const [itemInput, setItemInput] = useState("");
-  // const [item, setItem] = useState("");
-
-  // const filteredItems = items.filter((item) =>
-  //   item.name.toLowerCase().includes(itemInput)
-  // );
-  // setItem(...filteredItems.name);
+  const [total, setTotal] = useState(0);
+  const [cart, setCart] = useState([
+    {
+      name: "",
+      price: 0,
+    },
+  ]);
 
   return (
     <StyledSearch>
       <div>
         <StyledInput
           type="text"
-          placeholder="Search Character..."
+          placeholder="Search Item..."
           value={itemInput}
           onChange={(e) => setItemInput(e.target.value)}
         />
       </div>
-
+      {total}
+      {cart.map((item) => {
+        return <p>{item.price}</p>;
+      })}
       {itemInput && (
-        <div>
+        <StyledDiv>
           {ITEMDATA.filter((item) => {
             if (itemInput === "") {
               return item;
@@ -52,10 +61,19 @@ const Vendor = () => {
                 {item.vendor_name}
                 <br />
                 {item.price}
+                <br />
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setTotal(total + item.price);
+                  }}
+                >
+                  Add
+                </button>
               </p>
             );
           })}
-        </div>
+        </StyledDiv>
       )}
     </StyledSearch>
   );
